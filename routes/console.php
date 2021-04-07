@@ -19,8 +19,9 @@ Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
 
-Artisan::command('cu {file} {--e=hide}', function () {
+Artisan::command('cu {file=null} {--e=hide}', function () {
     $filename=$this->argument("file");
+    if($filename!=="null"){
     $opt=$this->option("e");
     $error=[];
 
@@ -113,9 +114,11 @@ Artisan::command('cu {file} {--e=hide}', function () {
          
        }
     }
+}else{
+$this->comment(
+    "Please enter a filename in command line "
+);
+return false;
+}
     
-   
-    // $this->comment(
-    //   $opt
-    // );
 })->purpose('Laravel boss test');
