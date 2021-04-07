@@ -54,7 +54,7 @@ Artisan::command('cu {file=null} {--e=hide}', function () {
                    array_push($csvExploded,$row);
                }
                else{
-                array_push($errorLines,"Special price has to be less than Normal price and cannot be negative or 0 in row ".$i+1 ." of uploaded csv file "."sku: ". $row[0]);
+                array_push($errorLines,"Special price has to be less than Normal price and cannot be negative or 0 in row ".($i+1) ." of uploaded csv file "."sku: ". $row[0]);
                 array_push($errorRows,$i);
                }
             }
@@ -63,14 +63,14 @@ Artisan::command('cu {file=null} {--e=hide}', function () {
             }
            }
                else{
-                   array_push($errorLines,"All fields except special_price are requied in row ".$i+1 ." of uploaded csv file "."sku: ". $row[0]);
+                   array_push($errorLines,"All fields except special_price are requied in row ".($i+1) ." of uploaded csv file "."sku: ". $row[0]);
                    array_push($errorRows,$i);
                   
                }
            }
         
         else{
-           array_push($errorLines,"Wrong delimeter used on line ".$i+1 ." of uploaded csv file "."sku: ". $row[0]);
+           array_push($errorLines,"Wrong delimeter used on line ".($i+1) ." of uploaded csv file "."sku: ". $row[0]);
            array_push($errorRows,$i);
         }
         $totalRows=$i-1;
