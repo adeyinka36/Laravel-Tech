@@ -2,7 +2,7 @@ How to use this app
 
 -Create a database called "products" in localhost
 -clone this repository
--run composer update command
+-run composer update --ignore-platform-reqs command
 -run "php artisan migrate:fresh" command
 - run "php artisan db:seed" command
 
